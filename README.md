@@ -9,16 +9,25 @@
 
 ```html
 <body>
-<div id="douban"></div>
+  <div id="douban"></div>
 </body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/idouban/dist/main.css"/>
-<script src="https://cdn.jsdelivr.net/npm/idouban/dist/main.js" onload="window.idouban.init({
-           selector: '#douban',
-           type: 'movie',
-           douban_id: ${your_douban_id},
-           page_size: 15,
-        })">
-</script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/idouban/dist/main.css"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/idouban/dist/main.js"
+  onload="idouban.init({
+      selector:'#douban',
+      lang: 'zh',
+      douban_id: '162448367',
+      type: 'book',
+      quote: 'This is my books',
+      page_size: 10,
+      max_line: 4
+          })"
+></script>
+
 ```
 
 cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，例如若当前版本是 `1.0.1` ：
@@ -30,10 +39,14 @@ cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，�
 
 配置项如下：
 
-* selector : 表示需要将相关代码生成后嵌入到指定 `document.querySelector($selector)` 下。
-* type : 表示需要生成的页面类型，可选项为 `book`, `movie`, `game`, `song`。
+* selector : 表示需要将相关代码生成后嵌入到指定 `document.querySelector($selector)` 的元素下。
+* lang: 表示国际化的语言，当前支持：zh-cn , zh-tw , en .
 * douban_id : 你的豆瓣ID(纯数字格式，不是自定义的域名)。获取方法可以参考[怎样获取豆瓣的数字 ID ？](https://www.zhihu.com/question/19634899)。
-* page_size : 每页需要展示的条目数。
+* type : 表示需要生成的页面类型，可选项为 `book`, `movie`, `game`, `song`。
+* actions: 字符串数组，表示需要展示的"在看"，"想看"，"已看"的顺序，默认是 ["do", "wish", "collect"]。
+* quote: 表示需要在页面上方添加的一段引用文本，可不填。
+* page_size : 每页需要展示的条目数，默认为10。
+* max_line: 条目的元数据最多的行数，超过会以省略号代替，默认为4。
 
 ## 原理
 

@@ -1,39 +1,46 @@
 {
   "name": "idouban",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Inject douban pages in your site.",
   "main": "dist/main.js",
-  "css": "dist/main.css",
   "targets": {
     "main": {
-      "source": "src/index.js",
+      "source": "src/index.ts",
       "optimize": true
-    },
-    "css": {
-      "source": "src/index.css"
     }
   },
   "scripts": {
-    "start": "parcel serve -p 8888 src/index.html --dist-dir build",
+    "start": "parcel serve -p 8888 src/index.html --dist-dir build/",
     "build": "parcel build --no-source-maps"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "i18next": "^23.11.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "bugs": {
+    "url": "https://github.com/mythsman/idouban/issues"
+  },
+  "homepage": "https://github.com/mythsman/idouban/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mythsman/idouban.git"
   },
   "keywords": [
     "douban"
   ],
   "author": "mythsman",
-  "license": "MIT",
-  "devDependencies": {
-    "parcel": "^2.8.3"
-  },
-  "engines": {
-    "node": ">= 19"
-  },
-  "bugs": {
-    "url": "https://github.com/mythsman/hexo-douban/issues"
-  },
-  "homepage": "https://github.com/mythsman/hexo-douban/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mythsman/idouban.git"
-  }
+  "license": "MIT"
 }

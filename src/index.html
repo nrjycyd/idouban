@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>iDouban Demo</title>
-  <link rel="stylesheet" href="index.css"/>
-</head>
-<body>
-<div id="idouban"></div>
-</body>
-
-<script src="index.js" type="module"
-        onload="idouban.init({
-           selector: '#idouban',
-           type: 'movie',
-           douban_id: 162448367,
-           page_size: 10,
-        })"></script>
-
-</html>
+<div id="db"></div>
+<script
+  src="./index.ts"
+  type="module"
+  onload="idouban.init({
+    selector:'#db',
+    lang: 'zh',
+    douban_id: '162448367',
+    type: 'book',
+    quote: 'This is my books',
+    page_size: 10,
+    max_line: 4
+  })"
+></script>
