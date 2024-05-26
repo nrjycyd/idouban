@@ -5,6 +5,7 @@
 
 .idouban-tab {
   padding: 5px;
+  cursor: pointer;
   text-decoration: none !important;
 }
 
@@ -80,11 +81,6 @@
 
 .idouban-button {
   padding: 5px;
+  cursor: pointer;
   text-decoration: none !important;
-}
-
-.idouban-button:hover {
-  background: #657b83;
-  color: #fff !important;
-  opacity: 1;
 }

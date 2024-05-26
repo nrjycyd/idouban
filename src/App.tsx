@@ -47,7 +47,6 @@ export default function App({ context }: { context: Context }) {
                 data.action === state.action ? "idouban-tab-active" : ""
               }`}
               key={data.action}
-              href="javascript:;"
               onClick={() => render(data.action, 1)}
               rel="external"
             >
@@ -89,14 +88,12 @@ export default function App({ context }: { context: Context }) {
         <div className="idouban-pagination">
           <a
             className="idouban-button"
-            href="javascript:;"
             onClick={() => render(state.action, 1)}
           >
             {t("top")}
           </a>
           <a
             className="idouban-button"
-            href="javascript:;"
             onClick={() => render(state.action, Math.max(state.page - 1, 1))}
           >
             {t("prev")}
@@ -109,13 +106,11 @@ export default function App({ context }: { context: Context }) {
             onClick={() =>
               render(state.action, Math.min(state.page + 1, state.total))
             }
-            href="javascript:;"
           >
             {t("next")}
           </a>
           <a
             className="idouban-button"
-            href="javascript:;"
             onClick={() => render(state.action, state.total)}
           >
             {t("end")}
