@@ -8,7 +8,7 @@ export default function App({ context }: { context: Context }) {
   });
 
   const calTotalPage = (total: number, perPage: number) => {
-    return Math.max(1, Math.floor((total - 1) / context.page_size + 1));
+    return Math.max(1, Math.floor((total - 1) / perPage + 1));
   };
 
   const [state, setState] = React.useState({

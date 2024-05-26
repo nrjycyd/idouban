@@ -1,11 +1,16 @@
 {
   "name": "idouban",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Inject douban pages in your site.",
-  "main": "dist/main.js",
   "targets": {
-    "main": {
+    "js": {
       "source": "src/index.ts",
+      "distDir": "dist/",
+      "optimize": true
+    },
+    "css": {
+      "source": "src/index.css",
+      "distDir": "dist/",
       "optimize": true
     }
   },

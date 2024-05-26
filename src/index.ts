@@ -4,7 +4,6 @@ import App from "./App";
 import { createRoot } from "react-dom/client";
 import { init_lang } from "./i18n.ts";
 import { fetchData } from "./http.ts";
-import "./index.css";
 import { IDoubanConfig } from "./types.ts";
 
 const init_config = (config: IDoubanConfig) => {
