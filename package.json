@@ -37,7 +37,7 @@
   "homepage": "https://github.com/mythsman/idouban/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mythsman/idouban.git"
+    "url": "git+https://github.com/mythsman/idouban.git"
   },
   "keywords": [
     "douban"
