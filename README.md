@@ -8,6 +8,8 @@
 ## 配置
 
 ```html
+
+
 <body>
   <div id="douban"></div>
 </body>
@@ -23,6 +25,7 @@
       douban_id: '162448367',
       type: 'book',
       quote: 'This is my books',
+      actions: ['do','wish','collect'],
       page_size: 10,
       max_line: 4
           })"

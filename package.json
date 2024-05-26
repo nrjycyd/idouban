@@ -1,6 +1,6 @@
 {
   "name": "idouban",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Inject douban pages in your site.",
   "main": "dist/main.js",
   "targets": {
@@ -14,7 +14,8 @@
     "build": "parcel build --no-source-maps"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "dependencies": {
     "i18next": "^23.11.5",
