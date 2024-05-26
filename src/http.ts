@@ -7,7 +7,7 @@ import {
   ShowItem,
 } from "./types.ts";
 import i18next from "i18next";
-import * as pkg from "../package.json";
+import { name, version } from "../package.json";
 
 const renderStar = (num: number): string => {
   switch (num) {
@@ -29,7 +29,7 @@ const renderStar = (num: number): string => {
 export const syncFetch = async (url: string, referer: string) => {
   try {
     const headers = {
-      "User-Agent": `${pkg.name}@${pkg.version}`,
+      "User-Agent": `${name}@${version}`,
     };
 
     if (referer) {

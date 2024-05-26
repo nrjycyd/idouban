@@ -15,10 +15,10 @@
 </body>
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/idouban/dist/main.css"
+  href="https://cdn.jsdelivr.net/npm/idouban/dist/index.css"
 />
 <script
-  src="https://cdn.jsdelivr.net/npm/idouban/dist/main.js"
+  src="https://cdn.jsdelivr.net/npm/idouban/dist/index.js"
   onload="idouban.init({
       selector:'#douban',
       lang: 'zh',
@@ -33,10 +33,10 @@
 
 ```
 
-cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，例如若当前版本是 `1.0.1` ：
+cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，例如若当前版本是 `1.1.0` ：
 
-* `https://cdn.jsdelivr.net/npm/idouban@1.0.1/dist/main.css`
-* `https://cdn.jsdelivr.net/npm/idouban@1.0.1/dist/main.js`
+* `https://cdn.jsdelivr.net/npm/idouban@1.1.0/dist/index.css`
+* `https://cdn.jsdelivr.net/npm/idouban@1.1.0/dist/index.js`
 
 考虑到 jsdelivr 国内访问效果不太好，建议直接 self-host 这些文件。
 
