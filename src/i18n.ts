@@ -73,7 +73,7 @@ const en_dict = {
 i18next.init({
   lng: "zh",
   fallbackLng: "zh",
-  debug: true,
+  debug: false,
   lowerCaseLng: true,
   resources: {
     en: {

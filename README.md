@@ -8,8 +8,6 @@
 ## 配置
 
 ```html
-
-
 <body>
   <div id="douban"></div>
 </body>
