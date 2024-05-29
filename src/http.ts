@@ -6,21 +6,20 @@ import {
   MovieComment,
   ShowItem,
 } from "./types.ts";
-import i18next from "i18next";
 import { name, version } from "../package.json";
 
-const renderStar = (num: number): string => {
+const getRate = (num: number): string => {
   switch (num) {
     case 1:
-      return i18next.t("poor");
+      return "poor";
     case 2:
-      return i18next.t("fair");
+      return "fair";
     case 3:
-      return i18next.t("good");
+      return "good";
     case 4:
-      return i18next.t("great");
+      return "great";
     case 5:
-      return i18next.t("best");
+      return "best";
     default:
       return "";
   }
@@ -103,22 +102,20 @@ export const fetchBook = async (
       metas.push(comment.item.producer);
     }
 
-    const rating: string[] = [];
+    const marks: string[] = [];
     if (comment.mark_date) {
-      rating.push(comment.mark_date);
+      marks.push(comment.mark_date);
     }
     if (comment.label) {
-      rating.push(comment.label);
-    }
-    if (comment.rate) {
-      rating.push(renderStar(comment.rate));
+      marks.push(comment.label);
     }
     book.push({
       title: comment.item.title,
       alt: "https://book.douban.com/subject/" + comment.item.douban_id + "/",
       image: comment.item.thumbnail,
       meta: metas.join(" / "),
-      rating: rating.join(" / "),
+      mark: marks.join(" / "),
+      rate: getRate(comment.rate),
       comment: comment.comment,
     });
   }
@@ -161,22 +158,20 @@ export const fetchGame = async (
     if (comment.item.publisher) {
       metas.push(comment.item.publisher);
     }
-    const rating: string[] = [];
+    const marks: string[] = [];
     if (comment.mark_date) {
-      rating.push(comment.mark_date);
+      marks.push(comment.mark_date);
     }
     if (comment.label) {
-      rating.push(comment.label);
-    }
-    if (comment.rate) {
-      rating.push(renderStar(comment.rate));
+      marks.push(comment.label);
     }
     game.push({
       title: comment.item.title,
       alt: "https://www.douban.com/game/" + comment.item.douban_id + "/",
       image: comment.item.thumbnail,
       meta: metas.join(" / "),
-      rating: rating.join(" / "),
+      mark: marks.join(" / "),
+      rate: getRate(comment.rate),
       comment: comment.comment,
     });
   }
@@ -229,22 +224,20 @@ export const fetchSong = async (
     if (comment.item.publish_date) {
       metas.push(comment.item.publish_date);
     }
-    const rating: string[] = [];
+    const marks: string[] = [];
     if (comment.mark_date) {
-      rating.push(comment.mark_date);
+      marks.push(comment.mark_date);
     }
     if (comment.label) {
-      rating.push(comment.label);
-    }
-    if (comment.rate) {
-      rating.push(renderStar(comment.rate));
+      marks.push(comment.label);
     }
     song.push({
       title: comment.item.title,
       alt: "https://music.douban.com/subject/" + comment.item.douban_id + "/",
       image: comment.item.thumbnail,
       meta: metas.join(" / "),
-      rating: rating.join(" / "),
+      mark: marks.join(" / "),
+      rate: getRate(comment.rate),
       comment: comment.comment,
     });
   }
@@ -290,22 +283,20 @@ export const fetchMovie = async (
     if (comment.item.publish_date) {
       metas.push(comment.item.publish_date);
     }
-    const rating: string[] = [];
+    const marks: string[] = [];
     if (comment.mark_date) {
-      rating.push(comment.mark_date);
+      marks.push(comment.mark_date);
     }
     if (comment.label) {
-      rating.push(comment.label);
-    }
-    if (comment.rate) {
-      rating.push(renderStar(comment.rate));
+      marks.push(comment.label);
     }
     movie.push({
       title: comment.item.title,
       alt: "https://movie.douban.com/subject/" + comment.item.douban_id + "/",
       image: comment.item.thumbnail,
       meta: metas.join(" / "),
-      rating: rating.join(" / "),
+      mark: marks.join(" / "),
+      rate: getRate(comment.rate),
       comment: comment.comment,
     });
   }

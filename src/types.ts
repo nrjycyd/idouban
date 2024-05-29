@@ -118,6 +118,7 @@ export interface ShowItem {
   alt: string;
   image: string;
   meta: string;
-  rating: string;
+  mark: string;
+  rate: string;
   comment: string;
 }

@@ -79,17 +79,16 @@ export default function App({ context }: { context: Context }) {
             >
               {item.meta}
             </div>
-            <div className="idouban-rating">{item.rating}</div>
+            <div className="idouban-rating">
+              {item.mark + (item.rate ? " /" + t(item.rate) : "")}
+            </div>
             <div className="idouban-comment">{item.comment}</div>
           </div>
         </div>
       ))}
       {state.data.length > 0 && (
         <div className="idouban-pagination">
-          <a
-            className="idouban-button"
-            onClick={() => render(state.action, 1)}
-          >
+          <a className="idouban-button" onClick={() => render(state.action, 1)}>
             {t("top")}
           </a>
           <a
