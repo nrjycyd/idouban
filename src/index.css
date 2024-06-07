@@ -31,12 +31,13 @@
 .idouban-picture {
   position: absolute;
   left: 0;
+  width: 100px;
   top: 10px;
 }
 
 .idouban-picture img {
-  width: 100px;
-  max-height: 130px;
+  max-width: 100px;
+  max-height: 150px;
 }
 
 .idouban-info {
