@@ -31,6 +31,34 @@
 
 ```
 
+## 动态脚本加载（适合单篇文章）
+
+```html
+## 我的豆瓣书单
+
+<div id="douban-container"></div>
+
+<script setup>
+// 动态加载豆瓣资源
+const link = document.createElement('link')
+link.rel = 'stylesheet'
+link.href = 'https://cdn.jsdelivr.net/npm/idouban/dist/index.css'
+document.head.appendChild(link)
+
+const script = document.createElement('script')
+script.src = 'https://cdn.jsdelivr.net/npm/idouban/dist/index.js'
+script.onload = () => {
+  window.idouban?.init({
+    selector: '#douban-container',
+    douban_id: '162448367',
+    type: 'book'
+  })
+}
+document.head.appendChild(script)
+</script>
+
+```
+
 cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，例如若当前版本是 `1.1.0` ：
 
 * `https://cdn.jsdelivr.net/npm/idouban@1.1.0/dist/index.css`
