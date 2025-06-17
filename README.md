@@ -117,7 +117,7 @@ document.head.appendChild(script)
     })
     ```
 
-3. 在 在 `Markdown` 中使用，`type` 和 `douban-id` 按需填写
+3. 在 `Markdown` 中使用，`type` 和 `douban-id` 按需填写
 
     ```markdown
     <idouban type="book" douban-id="162448367" />
