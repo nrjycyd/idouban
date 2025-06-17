@@ -123,6 +123,8 @@ document.head.appendChild(script)
     <idouban type="book" douban-id="162448367" />
     ```
 
+## 参数说明
+
 cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，例如若当前版本是 `1.1.0` ：
 
 * `https://cdn.jsdelivr.net/npm/idouban@1.1.0/dist/index.css`
