@@ -59,6 +59,70 @@ document.head.appendChild(script)
 
 ```
 
+## vuepress 配置（自定义的 Vue 组件）
+
+1. 创建组件 `./theme/components/idouban.vue` 
+
+    ```vue
+    <template>
+      <div id="douban-container"></div>
+    </template>
+
+    <script setup>
+    import { onMounted } from 'vue'
+
+    // 定义 props，接受 type 参数（默认值设为 'book'）
+    const props = defineProps({
+      type: {
+        type: String,
+        default: 'book', // 默认类型为 'book'
+        validator: (value) => ['book', 'movie', 'song', 'game'].includes(value), // 可选：验证参数合法性
+      },
+      doubanId: { // 可选：你也可以让 douban_id 通过 props 传入
+        type: String,
+        default: '162448367',
+      },
+    })
+
+    onMounted(() => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = 'https://cdn.jsdelivr.net/npm/idouban@1.1.3/dist/index.css'
+      document.head.appendChild(link)
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/idouban@1.1.3/dist/index.js'
+      script.onload = () => {
+        window.idouban?.init({
+          selector: '#douban-container',
+          douban_id: props.doubanId, // 使用 props.doubanId
+          type: props.type,          // 使用 props.type
+        })
+      }
+      document.head.appendChild(script)
+    })
+    </script>
+    ```
+
+2. 注册组件 `.vuepress/client.ts`
+
+    ```ts
+    import { defineClientConfig } from 'vuepress/client'
+    import idouban from './theme/components/idouban.vue'
+
+    export default defineClientConfig({
+      enhance({ app }) {
+        app.component('idouban', idouban)
+      },
+    })
+    ```
+
+3. 在 在 `Markdown` 中使用，`type` 和 `douban-id` 按需填写
+
+    ```markdown
+    <idouban type="book" douban-id="162448367" />
+    ```
+
 cdn 缓存可能不是最新，如需最新版本，可直接指定版本号，例如若当前版本是 `1.1.0` ：
 
 * `https://cdn.jsdelivr.net/npm/idouban@1.1.0/dist/index.css`
