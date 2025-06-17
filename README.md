@@ -59,7 +59,7 @@ document.head.appendChild(script)
 
 ```
 
-## vuepress 配置（自定义的 Vue 组件）
+## vuepress 配置（自定义 Vue 组件）
 
 1. 创建组件 `./theme/components/idouban.vue` 
 
